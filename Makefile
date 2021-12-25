@@ -5,6 +5,7 @@ setup: install migrate
 
 migrate:
 	php artisan migrate
+	php artisan db:seed
 
 log:
 	tail -f storage/logs/laravel.log
