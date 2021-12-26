@@ -15,7 +15,7 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->text('content');
             $table->timestamps();

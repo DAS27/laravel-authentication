@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Entry;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/entries', function (Request $request) {
-    return Entry::all();
-});
+    return $request->user()->entries;
+})->middleware('auth:sanctum');
